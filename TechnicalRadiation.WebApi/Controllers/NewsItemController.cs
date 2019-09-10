@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.Dto;
@@ -13,6 +14,11 @@ namespace TechnicalRadiation.WebApi.Controllers
     public class NewsItemController : Controller
     {
         private NewsItemService _newsItemService;
+
+        public NewsItemController(IMapper mapper)
+        {
+            _newsItemService = new NewsItemService();
+        }
         [HttpGet]
         [Route("")]
         public IActionResult GetAllNewsItems([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)

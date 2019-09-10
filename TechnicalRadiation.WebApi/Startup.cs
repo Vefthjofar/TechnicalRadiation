@@ -9,17 +9,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TechnicalRadiation.Services;
 using TechnicalRadiation.WebApi.Mappings;
+
 
 namespace TechnicalRadiation.WebApi
 {
     public class Startup
     {
-        private NewsItemService _newsItemService;
-        public RentalController(IMapper mapper)
-        {
-            _newsItemService = new NewsItemService();
-        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

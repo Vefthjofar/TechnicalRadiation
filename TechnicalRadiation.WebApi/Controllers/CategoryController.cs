@@ -19,11 +19,20 @@ namespace TechnicalRadiation.WebApi.Controllers
         {
             _categoryService = new CategoryService(mapper);
         }
+
         [HttpGet]
         [Route("")]
         public IActionResult GetAllCategories()
         {
             return Ok(_categoryService.GetAllCategories().ToList());
+        }
+
+        [HttpGet]
+        [Route("{id:int}", Name = "GetCategoryById")]
+        public IActionResult GetCategoryById(int id)
+        {
+            var category = _categoryService.GetCategoryById(id);
+            return Ok(category);
         }
     }
 }

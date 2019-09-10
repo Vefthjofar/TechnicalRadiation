@@ -20,6 +20,12 @@ namespace TechnicalRadiation.Services
             var categories = _CategoryRepository.GetAllCategories().ToList();
             return categories;
         }
+
+        public CategoryDto GetCategoryById(int id)
+        {
+            var category = _CategoryRepository.GetCategoryById(id);
+            return category;
+        }
         
     }
 }

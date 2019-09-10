@@ -25,6 +25,28 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "TechnicalRadiation.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/TechnicalRadiation.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechnicalRadiation.Models.dll": {}
+        }
       }
     }
   },
@@ -169,11 +191,46 @@
         "netstandard.library.2.0.1.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "mtweBXPWhp1CMQATtBT7ZfMZrbZBTKfjGwz6Y75NwGjx/GztDaUnfw8GK9KZ2T4fDIqKJyDjc9Rxlw5+G2FcVA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.2",
+      "files": [
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "TechnicalRadiation.Models/1.0.0": {
+      "type": "project",
+      "path": "../TechnicalRadiation.Models/TechnicalRadiation.Models.csproj",
+      "msbuildProject": "../TechnicalRadiation.Models/TechnicalRadiation.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.1"
+      "NETStandard.Library >= 2.0.1",
+      "TechnicalRadiation.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -183,11 +240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\TechnicalRadiation.Repositories.csproj",
+      "projectUniqueName": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\TechnicalRadiation.Repositories.csproj",
       "projectName": "TechnicalRadiation.Repositories",
-      "projectPath": "C:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\TechnicalRadiation.Repositories.csproj",
+      "projectPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\TechnicalRadiation.Repositories.csproj",
       "packagesPath": "C:\\Users\\Birkir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\obj\\",
+      "outputPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -203,7 +260,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj": {
+              "projectPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

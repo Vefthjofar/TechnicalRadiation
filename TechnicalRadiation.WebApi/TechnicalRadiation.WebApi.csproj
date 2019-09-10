@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TechnicalRadiation.Models\TechnicalRadiation.Models.csproj" />
     <ProjectReference Include="..\TechnicalRadiation.Services\TechnicalRadiation.Services.csproj" />
+    <ProjectReference Include="..\TechnicalRadiation.Models\TechnicalRadiation.Models.csproj" />
   </ItemGroup>
 
 </Project>

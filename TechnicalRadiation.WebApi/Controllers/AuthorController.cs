@@ -22,5 +22,12 @@ namespace TechnicalRadiation.WebApi.Controllers
             var authors = _authorService.GetAllAuthors().ToList();
             return Ok(authors);
         }
+        [HttpGet]
+        [Route("{id:int}", Name = "GetAuthorById")]
+        public IActionResult GetAuthorById(int id)
+        {
+            var author = _authorService.GetAuthorById(id);
+            return Ok(author);
+        }
     }
 }

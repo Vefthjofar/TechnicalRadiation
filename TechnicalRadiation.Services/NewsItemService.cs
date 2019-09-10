@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
@@ -11,12 +12,12 @@ namespace TechnicalRadiation.Services
 
         public NewsItemService(IMapper mapper)
         {
-            _newsItemRepository = new NewsItemRepository();
+            _newsItemRepository = new NewsItemRepository(mapper);
         }
 
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
-            var newsItems = _newsItemRepository.GetAllNewsItems().toList;
+            var newsItems = _newsItemRepository.GetAllNewsItems().ToList();
             return newsItems;
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TechnicalRadiation.Models.InputModels
@@ -20,6 +21,6 @@ namespace TechnicalRadiation.Models.InputModels
         [MaxLength(255)]
         public string LongDescription { get; set; }
         [Required]
-        public string PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace TechnicalRadiation.Repositories
         }
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
-            return _mapper.Map<IEnumerable<NewsItemDto>>(DataProvider.NewsItems);
+            return _mapper.Map<IEnumerable<NewsItemDto>>(DataProvider.NewsItems.OrderByDescending(r => r.PublishDate));
         }
     }
 }

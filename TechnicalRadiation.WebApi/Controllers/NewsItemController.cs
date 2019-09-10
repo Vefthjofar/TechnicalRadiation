@@ -17,14 +17,14 @@ namespace TechnicalRadiation.WebApi.Controllers
 
         public NewsItemController(IMapper mapper)
         {
-            _newsItemService = new NewsItemService();
+            _newsItemService = new NewsItemService(mapper);
         }
         [HttpGet]
         [Route("")]
         public IActionResult GetAllNewsItems([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)
         {
-            
-            var envelope = new Envelope<NewsItemDto>(pageNumber, pageSize, listi);
+            var newsItems = _newsItemService.GetAllNewsItems().ToList();
+            var envelope = new Envelope<NewsItemDto>(pageNumber, pageSize, newsItems);
             return Ok(envelope);
         }
     }

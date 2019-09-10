@@ -18,5 +18,12 @@ namespace TechnicalRadiation.Repositories
         {
             return _mapper.Map<IEnumerable<CategoryDto>>(DataProvider.Categories);
         }
+
+        public CategoryDto GetCategoryById(int id)
+        {
+            var entity = DataProvider.Categories.FirstOrDefault(r => r.Id == id);
+            if (entity == null) { return null; /* throw some exception */ }
+            return _mapper.Map<CategoryDto>(entity);
+        }
     }
 }

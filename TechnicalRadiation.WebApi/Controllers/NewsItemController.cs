@@ -27,5 +27,12 @@ namespace TechnicalRadiation.WebApi.Controllers
             var envelope = new Envelope<NewsItemDto>(pageNumber, pageSize, newsItems);
             return Ok(envelope);
         }
+        [HttpGet]
+        [Route("{id:int}", Name = "GetNewsById")]
+        public IActionResult GetNewsById(int id)
+        {
+            var newsItem = _newsItemService.GetNewsById(id);
+            return Ok(newsItem);
+        }
     }
 }

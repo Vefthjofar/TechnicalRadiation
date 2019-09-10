@@ -75,5 +75,18 @@ namespace TechnicalRadiation.Repositories.Data
                 ModifiedDate = DateTime.Now
             },
         };
+        public static List<Author> Authors = new List<Author>
+        {
+            new Author
+            {
+                Id = 1,
+                Name = "Gandalf",
+                ProfileImgSource = "https://en.wikipedia.org/wiki/Gandalf#/media/File:Gandalf600ppx.jpg",
+                Bio = "the white",
+                ModifiedBy = _adminName,
+                CreatedDate = DateTime.Now,
+                ModifiedDate = DateTime.Now
+            }
+        };
     }
 }

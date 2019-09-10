@@ -20,5 +20,10 @@ namespace TechnicalRadiation.Services
             var newsItems = _newsItemRepository.GetAllNewsItems().ToList();
             return newsItems;
         }
+        public NewsItemDto GetNewsById(int id)
+        {
+            var newsItem = _newsItemRepository.GetNewsById(id);
+            return newsItem;
+        }
     }
 }

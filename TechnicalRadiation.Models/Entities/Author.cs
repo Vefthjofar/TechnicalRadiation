@@ -1,3 +1,5 @@
+using System;
+
 namespace TechnicalRadiation.Models.Entities
 {
     public class Author
@@ -7,7 +9,7 @@ namespace TechnicalRadiation.Models.Entities
         public string ProfileImgSource { get; set; }
         public string Bio { get; set; }
         public string ModifiedBy { get; set; } // code-generated
-        public string CreatedDate { get; set; } // code-generated
-        public string ModifiedDate { get; set; } //code-generated
+        public DateTime CreatedDate { get; set; } // code-generated
+        public DateTime ModifiedDate { get; set; } //code-generated
     }
 }

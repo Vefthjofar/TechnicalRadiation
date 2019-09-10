@@ -18,5 +18,12 @@ namespace TechnicalRadiation.Repositories
         {
             return _mapper.Map<IEnumerable<NewsItemDto>>(DataProvider.NewsItems.OrderByDescending(r => r.PublishDate));
         }
+        
+        public NewsItemDto GetNewsById(int id)
+        {
+            var entity = DataProvider.NewsItems.FirstOrDefault(r => r.Id == id);
+            if (entity == null) { return null; /* throw some exception */ }
+            return _mapper.Map<NewsItemDto>(entity);
+        }
     }
 }

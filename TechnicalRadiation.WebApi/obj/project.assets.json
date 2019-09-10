@@ -3175,7 +3175,7 @@
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.4.0": {
+      "System.ComponentModel.Annotations/4.5.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -4655,7 +4655,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.2",
+          "System.ComponentModel.Annotations": "4.5.0"
         },
         "compile": {
           "bin/placeholder/TechnicalRadiation.Models.dll": {}
@@ -8229,11 +8230,12 @@
         "system.collections.specialized.nuspec"
       ]
     },
-    "System.ComponentModel.Annotations/4.4.0": {
-      "sha512": "29K3DQ+IGU7LBaMjTo7SI7T7X/tsMtLvz1p56LJ556Iu0Dw3pKZw5g8yCYCWMRxrOF0Hr0FU0FwW0o42y2sb3A==",
+    "System.ComponentModel.Annotations/4.5.0": {
+      "sha512": "f1ApUHGWq/lJC8PZE7JqbA3tiY7ZngZQO2mbYfCG0JlQVVUqqmVMAy0fMvAwEuG639M47ELdP6PQxc5OIo6i6A==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.4.0",
+      "path": "system.componentmodel.annotations/4.5.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -8245,6 +8247,7 @@
         "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
         "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
         "lib/portable-net45+win8/_._",
+        "lib/uap10.0.16299/_._",
         "lib/win8/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
@@ -8303,12 +8306,13 @@
         "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
         "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
         "ref/portable-net45+win8/_._",
+        "ref/uap10.0.16299/_._",
         "ref/win8/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.4.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.5.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -12326,28 +12330,29 @@
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.7",
       "Microsoft.NETCore.App >= 2.0.0",
+      "Newtonsoft.Json >= 12.0.2",
       "TechnicalRadiation.Models >= 1.0.0",
       "TechnicalRadiation.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Birkir\\.nuget\\packages\\": {},
+    "C:\\Users\\greta\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.WebApi\\TechnicalRadiation.WebApi.csproj",
+      "projectUniqueName": "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.WebApi\\TechnicalRadiation.WebApi.csproj",
       "projectName": "TechnicalRadiation.WebApi",
-      "projectPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.WebApi\\TechnicalRadiation.WebApi.csproj",
-      "packagesPath": "C:\\Users\\Birkir\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.WebApi\\obj\\",
+      "projectPath": "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.WebApi\\TechnicalRadiation.WebApi.csproj",
+      "packagesPath": "C:\\Users\\greta\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Birkir\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\greta\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12358,11 +12363,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj": {
-              "projectPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj"
+            "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj": {
+              "projectPath": "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.Models\\TechnicalRadiation.Models.csproj"
             },
-            "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Services\\TechnicalRadiation.Services.csproj": {
-              "projectPath": "c:\\Users\\Birkir\\Documents\\Vefþjónustur\\Large Assignments\\Large Assignment 1\\TechnicalRadiation\\TechnicalRadiation.Services\\TechnicalRadiation.Services.csproj"
+            "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.Services\\TechnicalRadiation.Services.csproj": {
+              "projectPath": "c:\\Users\\greta\\Documents\\veffthjonustur\\TechnicalRadiation\\TechnicalRadiation.Services\\TechnicalRadiation.Services.csproj"
             }
           }
         }
@@ -12384,6 +12389,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.2, )"
           }
         },
         "imports": [

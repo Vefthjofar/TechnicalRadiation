@@ -6,3 +6,11 @@ C:\Users\Birkir\Documents\Vefþjónustur\Large Assignments\Large Assignment 1\Te
 C:\Users\Birkir\Documents\Vefþjónustur\Large Assignments\Large Assignment 1\TechnicalRadiation\TechnicalRadiation.Models\bin\Debug\netstandard2.0\TechnicalRadiation.Models.pdb
 C:\Users\Birkir\Documents\Vefþjónustur\Large Assignments\Large Assignment 1\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.dll
 C:\Users\Birkir\Documents\Vefþjónustur\Large Assignments\Large Assignment 1\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.pdb
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\bin\Debug\netstandard2.0\TechnicalRadiation.Models.deps.json
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\bin\Debug\netstandard2.0\TechnicalRadiation.Models.dll
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\bin\Debug\netstandard2.0\TechnicalRadiation.Models.pdb
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.csproj.CoreCompileInputs.cache
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.AssemblyInfoInputs.cache
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.AssemblyInfo.cs
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.dll
+C:\Users\greta\Documents\veffthjonustur\TechnicalRadiation\TechnicalRadiation.Models\obj\Debug\netstandard2.0\TechnicalRadiation.Models.pdb

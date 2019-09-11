@@ -47,7 +47,7 @@ namespace TechnicalRadiation.Services
         }
         public void DeleteAuthorById(int id)
         {
-            _authorRepository.DeleteAutorById(id);
+            _authorRepository.DeleteAuthorById(id);
         }
 
         public bool LinkAuthorToNewsItem(int authorId, int newsItemId)

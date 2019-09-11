@@ -1,3 +1,5 @@
+using TechnicalRadiation.Models.HyperMedia;
+
 namespace TechnicalRadiation.Models.Dto
 {
     public class CategoryDetailDto : HyperMediaModel

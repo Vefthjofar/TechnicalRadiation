@@ -65,7 +65,7 @@ namespace TechnicalRadiation.Repositories
             entity.ModifiedDate = DateTime.Now;
         }
 
-        public void DeleteAutorById(int id)
+        public void DeleteAuthorById(int id)
         {
             var entity = DataProvider.Authors.FirstOrDefault(r => r.Id == id);
             if(entity == null) { return;}
@@ -89,6 +89,23 @@ namespace TechnicalRadiation.Repositories
             };
             DataProvider.NewsItemAuthor.Add(entity);
             return true;
+        }
+
+        public List<AuthorDetailDto> GetAuthorsOfNewsItem(int newsItemId)
+        {
+            /*
+                Get NewsItemAuthors by newsItemId
+                for each NewsItemAuthor getAuthorById where authorId = NewsItemAuthor.AuthorId, add to list
+                map list from authors to authordto
+                return list 
+             */
+             List<AuthorDetailDto> authors = new List<AuthorDetailDto>();
+             var newsItemAuthors = DataProvider.NewsItemAuthor.Where(r => r.NewsItemId == newsItemId);
+             foreach(var i in newsItemAuthors)
+             {
+                 authors.Add(GetAuthorById(i.AuthorId));
+             }
+             return authors;
         }
     }
 }

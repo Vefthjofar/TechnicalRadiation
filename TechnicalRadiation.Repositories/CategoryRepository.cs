@@ -1,4 +1,3 @@
-using System;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories.Data;
 using System.Collections.Generic;
@@ -6,7 +5,6 @@ using System.Linq;
 using AutoMapper;
 using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Models.Entities;
-using System.Globalization;
 
 namespace TechnicalRadiation.Repositories
 {
@@ -22,11 +20,11 @@ namespace TechnicalRadiation.Repositories
             return _mapper.Map<IEnumerable<CategoryDto>>(DataProvider.Categories);
         }
 
-        public CategoryDto GetCategoryById(int id)
+        public CategoryDetailDto GetCategoryById(int id)
         {
             var entity = DataProvider.Categories.FirstOrDefault(r => r.Id == id);
             if (entity == null) { return null; /* throw some exception */ }
-            return _mapper.Map<CategoryDto>(entity);
+            return _mapper.Map<CategoryDetailDto>(entity);
         }
         
         public CategoryDto CreateNewCategory(CategoryInputModel category)

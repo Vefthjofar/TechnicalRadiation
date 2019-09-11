@@ -22,11 +22,11 @@ namespace TechnicalRadiation.Repositories
             return _mapper.Map<IEnumerable<AuthorDto>>(DataProvider.Authors);
         }
 
-        public AuthorDto GetAuthorById(int id)
+        public AuthorDetailDto GetAuthorById(int id)
         {
             var entity = DataProvider.Authors.FirstOrDefault(r => r.Id == id);
             if (entity == null) { return null; /* throw some exception */ }
-            return _mapper.Map<AuthorDto>(entity);
+            return _mapper.Map<AuthorDetailDto>(entity);
         }
 
          public IEnumerable<NewsItem> GetAllNewsItemsByAuthor(int id)

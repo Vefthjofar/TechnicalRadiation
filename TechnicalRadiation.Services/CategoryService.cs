@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using TechnicalRadiation.Models.Dto;
+using TechnicalRadiation.Models.Entities;
 using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Repositories;
 
@@ -41,6 +42,12 @@ namespace TechnicalRadiation.Services
         public void DeleteCategoryById(int id)
         {
              _categoryRepository.DeleteCategoryById(id);
+        }
+
+        public bool ConnectNewsItemToCategory(int categoryId, int newsItemId)
+        {
+            var success = _categoryRepository.ConnectNewsItemToCategory(categoryId, newsItemId);
+            return success;
         }
         
     }

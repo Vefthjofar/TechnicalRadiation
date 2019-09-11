@@ -60,7 +60,7 @@ namespace TechnicalRadiation.WebApi.Controllers
 
             _categoryService.UpdateCategoryById(category, id);
 
-            return NoContent();
+            return Ok();
         }
 
         [Route("{id:int}")]
@@ -70,6 +70,19 @@ namespace TechnicalRadiation.WebApi.Controllers
             if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
             _categoryService.DeleteCategoryById(id);
             return NoContent();
+        }
+
+        [Route("{categoryId:int}/newsItems/{newsItemId:int}")]
+        [HttpPost]
+        public IActionResult ConnectNewsItemToCategory(int categoryId, int newsItemId)
+        {
+            if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
+            if (!ModelState.IsValid) { return BadRequest("Model is not properly formatted."); }
+
+            var success = _categoryService.ConnectNewsItemToCategory(categoryId, newsItemId);
+
+            if (success) return Ok();
+            else return BadRequest("One or both id's don't match any data.");
         }
     }
 }

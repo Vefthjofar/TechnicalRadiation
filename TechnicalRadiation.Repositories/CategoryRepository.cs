@@ -47,6 +47,7 @@ namespace TechnicalRadiation.Repositories
 
             // Update properties
             entity.Name = category.Name;
+            // Maybe do this in the mapping profile?
             entity.Slug = category.Name.ToLower().Replace(' ', '-');
         }
 
@@ -55,6 +56,22 @@ namespace TechnicalRadiation.Repositories
             var entity = DataProvider.Categories.FirstOrDefault(r => r.Id == id);
             if (entity == null) { return; }
             DataProvider.Categories.Remove(entity);
+        }
+
+        public bool ConnectNewsItemToCategory(int categoryId, int newsItemId)
+        {
+            var categoryEntity = DataProvider.Categories.FirstOrDefault(r => r.Id == categoryId);
+            var newsItemEntity = DataProvider.Categories.FirstOrDefault(r => r.Id == newsItemId);
+            if (categoryEntity == null || newsItemEntity == null) { return false; }
+
+            NewsItemCategories newsItemCategory = new NewsItemCategories
+            {
+                CategoryId = categoryEntity.Id,
+                NewsItemId = newsItemEntity.Id
+            };
+            DataProvider.NewsItemCategories.Add(newsItemCategory);
+            return true;
+
         }
     }
 }

@@ -102,5 +102,8 @@ namespace TechnicalRadiation.Repositories.Data
                 NewsItemId = 1
             }
         };
+
+        public static List<NewsItemCategories> NewsItemCategories = new List<NewsItemCategories>
+        {};
     }
 }

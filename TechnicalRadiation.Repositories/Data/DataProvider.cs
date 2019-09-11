@@ -34,6 +34,18 @@ namespace TechnicalRadiation.Repositories.Data
                 ModifiedBy = _adminName,
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now
+            },
+            new NewsItem
+            {
+                Id = 2,
+                Title = "Title of news Article3",
+                ImgSource = "https://example.com/news-item/1.jpg",
+                ShortDescription = "Short description for the news item",
+                LongDescription = "Long description for the news item",
+                PublishDate = DateTime.Parse("12/09/2003 10:10:10"),
+                ModifiedBy = _adminName,
+                CreatedDate = DateTime.Now,
+                ModifiedDate = DateTime.Now
             }
         };
         public static List<Category> Categories = new List<Category>

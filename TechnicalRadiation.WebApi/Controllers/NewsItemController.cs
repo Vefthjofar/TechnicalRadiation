@@ -49,11 +49,12 @@ namespace TechnicalRadiation.WebApi.Controllers
 
             return CreatedAtRoute("GetNewsById", new { id = entity.Id }, null);
         }
-        
+
         [Route("{id:int}")]
         [HttpPut]
         public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int id)
         {
+            if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
             if (!ModelState.IsValid) { return BadRequest("Model is not properly formatted."); }
 
             _newsItemService.UpdateNewsItemById(newsItem, id);

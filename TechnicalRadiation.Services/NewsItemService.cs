@@ -4,6 +4,7 @@ using AutoMapper;
 using TechnicalRadiation.Models.Entities;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
+using TechnicalRadiation.Models.InputModels;
 
 namespace TechnicalRadiation.Services
 {
@@ -25,6 +26,11 @@ namespace TechnicalRadiation.Services
         {
             var newsItem = _newsItemRepository.GetNewsById(id);
             return newsItem;
+        }
+
+        public NewsItemDto CreateNewNewsItem(NewsItemInputModel newsItem)
+        {
+            return _newsItemRepository.CreateNewNewsitem(newsItem);
         }
 
     }

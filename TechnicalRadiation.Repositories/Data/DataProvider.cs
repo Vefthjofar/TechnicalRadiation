@@ -13,7 +13,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             new NewsItem
             {
-                Id = 1,
+                Id = 0,
                 Title = "Title of news Article",
                 ImgSource = "https://example.com/news-item/1.jpg",
                 ShortDescription = "Short description for the news item",
@@ -25,7 +25,7 @@ namespace TechnicalRadiation.Repositories.Data
             },
             new NewsItem
             {
-                Id = 2,
+                Id = 1,
                 Title = "Title of news Article2",
                 ImgSource = "https://example.com/news-item/1.jpg",
                 ShortDescription = "Short description for the news item",
@@ -40,7 +40,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             new Category
             {
-                Id = 1,
+                Id = 0,
                 Name = "Gadgets",
                 Slug = "gadgets",
                 ModifiedBy = _adminName,
@@ -49,7 +49,7 @@ namespace TechnicalRadiation.Repositories.Data
             },
             new Category
             {
-                Id = 2,
+                Id = 1,
                 Name = "Software",
                 Slug = "software",
                 ModifiedBy = _adminName,
@@ -58,7 +58,7 @@ namespace TechnicalRadiation.Repositories.Data
             },
             new Category
             {
-                Id = 3,
+                Id = 2,
                 Name = "Computers",
                 Slug = "computers",
                 ModifiedBy = _adminName,
@@ -67,7 +67,7 @@ namespace TechnicalRadiation.Repositories.Data
             },
             new Category
             {
-                Id = 4,
+                Id = 3,
                 Name = "New Technologies",
                 Slug = "new-technologies",
                 ModifiedBy = _adminName,
@@ -79,7 +79,7 @@ namespace TechnicalRadiation.Repositories.Data
         {
             new Author
             {
-                Id = 1,
+                Id = 0,
                 Name = "Gandalf",
                 ProfileImgSource = "https://en.wikipedia.org/wiki/Gandalf#/media/File:Gandalf600ppx.jpg",
                 Bio = "the white",
@@ -93,13 +93,13 @@ namespace TechnicalRadiation.Repositories.Data
         {
             new NewsItemAuthor
             {
-                AuthorId = 1,
-                NewsItemId = 1
+                AuthorId = 0,
+                NewsItemId = 0
             },
             new NewsItemAuthor
             {
-                AuthorId = 1,
-                NewsItemId = 2
+                AuthorId = 0,
+                NewsItemId = 1
             }
         };
     }

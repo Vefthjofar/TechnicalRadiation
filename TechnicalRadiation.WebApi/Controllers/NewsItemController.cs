@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.Dto;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Services;
 
 namespace TechnicalRadiation.WebApi.Controllers
@@ -14,10 +15,12 @@ namespace TechnicalRadiation.WebApi.Controllers
     public class NewsItemController : Controller
     {
         private NewsItemService _newsItemService;
+        private AuthenticationService _authenticationService;
 
         public NewsItemController(IMapper mapper)
         {
             _newsItemService = new NewsItemService(mapper);
+            _authenticationService = new AuthenticationService();
         }
         [HttpGet]
         [Route("")]
@@ -33,6 +36,18 @@ namespace TechnicalRadiation.WebApi.Controllers
         {
             var newsItem = _newsItemService.GetNewsById(id);
             return Ok(newsItem);
+        }
+
+        [Route("")]
+        [HttpPost]
+        public IActionResult CreateNewNewsItem([FromBody] NewsItemInputModel body)
+        {
+            if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
+            if (!ModelState.IsValid) { return BadRequest("Model is not properly formatted."); }
+            
+            var entity = _newsItemService.CreateNewNewsItem(body);
+
+            return CreatedAtRoute("GetNewsById", new { id = entity.Id }, null);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TechnicalRadiation.WebApi.Controllers
     public class AuthorController : Controller
     {
         private AuthorService _authorService;
-        
+
         public AuthorController(IMapper mapper)
         {
             _authorService = new AuthorService(mapper);
@@ -28,6 +28,15 @@ namespace TechnicalRadiation.WebApi.Controllers
         {
             var author = _authorService.GetAuthorById(id);
             return Ok(author);
+        }
+
+
+        [HttpGet]
+        [Route("{id:int}/newsItems", Name = "GetAuthorsNewsItems")]
+        public IActionResult GetAuthorsNewsItems(int id)
+        {
+            var newsItems = _authorService.getAllNewsItemsByAuthorId(id);
+            return Ok(newsItems);
         }
     }
 }

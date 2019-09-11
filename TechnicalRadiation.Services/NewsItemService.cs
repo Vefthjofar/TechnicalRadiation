@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using TechnicalRadiation.Models.Entities;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
 
@@ -25,5 +26,6 @@ namespace TechnicalRadiation.Services
             var newsItem = _newsItemRepository.GetNewsById(id);
             return newsItem;
         }
+
     }
 }

@@ -1,4 +1,4 @@
-    
+
 using System;
 using System.Collections.Generic;
 using TechnicalRadiation.Models.Entities;
@@ -86,6 +86,20 @@ namespace TechnicalRadiation.Repositories.Data
                 ModifiedBy = _adminName,
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now
+            }
+        };
+
+        public static List<NewsItemAuthor> NewsItemAuthor = new List<NewsItemAuthor>
+        {
+            new NewsItemAuthor
+            {
+                AuthorId = 1,
+                NewsItemId = 1
+            },
+            new NewsItemAuthor
+            {
+                AuthorId = 1,
+                NewsItemId = 2
             }
         };
     }

@@ -1,5 +1,3 @@
-using TechnicalRadiation.Models;
-
 namespace TechnicalRadiation.Models.Dto
 {
     public class NewsItemDto : HyperMediaModel

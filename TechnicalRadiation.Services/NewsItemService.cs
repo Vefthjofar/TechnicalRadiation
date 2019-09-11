@@ -16,7 +16,10 @@ namespace TechnicalRadiation.Services
         {
             _newsItemRepository = new NewsItemRepository(mapper);
         }
-
+        /* rentals.ForEach(r => {
+                r.Links.AddReference("self", $"/api/rentals/{r.Id}");
+                r.Links.AddListReference("owners", _ownerRepository.GetOwnersByRentalId(r.Id).Select(o => new { href = $"/api/rentals/{r.Id}/owners/{o.Id}" }));
+            }); */
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
             var newsItems = _newsItemRepository.GetAllNewsItems().ToList();

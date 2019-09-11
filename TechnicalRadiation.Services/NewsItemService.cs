@@ -33,5 +33,14 @@ namespace TechnicalRadiation.Services
             return _newsItemRepository.CreateNewNewsitem(newsItem);
         }
 
+        public void UpdateNewsItemById(NewsItemInputModel newsItem, int id)
+        {
+            _newsItemRepository.UpdateNewsItemById(newsItem, id);
+        }
+        public void DeleteNewsItemById(int id)
+        {
+             _newsItemRepository.DeleteNewsItemById(id);
+        }
+
     }
 }

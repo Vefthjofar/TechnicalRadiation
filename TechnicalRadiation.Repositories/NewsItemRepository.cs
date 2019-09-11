@@ -37,5 +37,26 @@ namespace TechnicalRadiation.Repositories
             DataProvider.NewsItems.Add(entity);
             return _mapper.Map<NewsItemDto>(entity);
         }
+        public void UpdateNewsItemById(NewsItemInputModel newsItem, int id)
+        {
+            var entity = DataProvider.NewsItems.FirstOrDefault(r => r.Id == id);
+            if (entity == null) { return; /* Throw some exception */ }
+
+            // Update properties
+            entity.Title = newsItem.Title;
+            entity.ImgSource = newsItem.ImgSource;
+            entity.LongDescription = newsItem.LongDescription;
+            entity.ModifiedBy = "Admin";
+            entity.ModifiedDate = DateTime.Now;
+            entity.PublishDate = newsItem.PublishDate;
+            entity.ShortDescription = newsItem.ShortDescription;
+
+        }
+        public void DeleteNewsItemById(int id)
+        {
+            var entity = DataProvider.NewsItems.FirstOrDefault(r => r.Id == id);
+            if (entity == null) { return; }
+            DataProvider.NewsItems.Remove(entity);
+        }
     }
 }

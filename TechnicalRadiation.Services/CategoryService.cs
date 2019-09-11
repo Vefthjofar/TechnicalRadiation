@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using TechnicalRadiation.Models.Dto;
+using TechnicalRadiation.Models.HyperMedia;
 using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Repositories;
 
@@ -19,12 +20,20 @@ namespace TechnicalRadiation.Services
         public IEnumerable<CategoryDto> GetAllCategories()
         {
             var categories = _categoryRepository.GetAllCategories().ToList();
+            categories.ForEach( c => {
+                c.Links.AddReference("self", new {href = $"/api/categories/{c.Id}"} );
+                c.Links.AddReference("edit", new {href = $"/api/categories/{c.Id}"} );
+                c.Links.AddReference("delete", new {href = $"/api/categories/{c.Id}"} );
+            });
             return categories;
         }
 
-        public CategoryDto GetCategoryById(int id)
+        public CategoryDetailDto GetCategoryById(int id)
         {
             var category = _categoryRepository.GetCategoryById(id);
+            category.Links.AddReference("self", new {href = $"/api/categories/{id}"} );
+            category.Links.AddReference("edit", new {href = $"/api/categories/{id}"} );
+            category.Links.AddReference("delete", new {href = $"/api/categories/{id}"} );
             return category;
         }
         

@@ -54,12 +54,12 @@ namespace TechnicalRadiation.Services
                 n.Links.AddReference("self", new {href = $"/api/{n.Id}"} );
                 n.Links.AddReference("edit", new {href = $"/api/{n.Id}"} );
                 n.Links.AddReference("delete", new {href = $"/api/{n.Id}"} );
-
                 // finna authors
-
+                n.Links.AddListReference("authors", _authorRepository.GetAuthorsOfNewsItem(n.Id)
+                .Select(o => new { href = $"/api/authors/{o.Id}"}));
                 // finna öll category id
                 n.Links.AddListReference("categories",  _categoryRepository.getCategoriesForNewsItem(n.Id)
-                .Select(o => new { href = $"/api/newsItems/{o}" }));
+                .Select(o => new { href = $"/api/categories/{o}" }));
             }
 
             return newsItems;

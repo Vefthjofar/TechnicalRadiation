@@ -22,11 +22,11 @@ namespace TechnicalRadiation.Repositories
         }
 
 
-        public NewsItemDto GetNewsById(int id)
+        public NewsItemDetailDto GetNewsById(int id)
         {
             var entity = DataProvider.NewsItems.FirstOrDefault(r => r.Id == id);
             if (entity == null) { return null; /* throw some exception */ }
-            return _mapper.Map<NewsItemDto>(entity);
+            return _mapper.Map<NewsItemDetailDto>(entity);
         }
 
         public NewsItemDto CreateNewNewsitem(NewsItemInputModel newsItem)

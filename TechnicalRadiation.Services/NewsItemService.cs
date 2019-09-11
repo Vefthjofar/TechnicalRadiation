@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using TechnicalRadiation.Models.Entities;
-using TechnicalRadiation.Models;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
 using TechnicalRadiation.Models.InputModels;
@@ -22,10 +20,7 @@ namespace TechnicalRadiation.Services
             _authorRepository = new AuthorRepository(mapper);
             _categoryRepository = new CategoryRepository(mapper);
         }
-        /* rentals.ForEach(r => {
-                r.Links.AddReference("self", $"/api/rentals/{r.Id}");
-                r.Links.AddListReference("owners", _ownerRepository.GetOwnersByRentalId(r.Id).Select(o => new { href = $"/api/rentals/{r.Id}/owners/{o.Id}" }));
-            }); */
+
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
             var newsItems = _newsItemRepository.GetAllNewsItems().ToList();
@@ -33,15 +28,20 @@ namespace TechnicalRadiation.Services
                 r.Links.AddReference("self", $"/api/{r.Id}");
                 r.Links.AddReference("edit", $"/api/{r.Id}");
                 r.Links.AddReference("delete", $"/api/{r.Id}");
-                /* for each author in returned list, create href */
-                r.Links.AddListReference("authors", _authorRepository.GetAuthorsOfNewsItem(r.Id).Select(a => new { href = $"/api/authors/{a.Id}"})); //$"/api/authors/{r.Id}"
+                r.Links.AddListReference("authors", _authorRepository.GetAuthorsOfNewsItem(r.Id).Select(a => new { href = $"/api/authors/{a.Id}"}));
+                r.Links.AddListReference("categories", _categoryRepository.getCategoriesForNewsItem(r.Id).Select(c => new { href = $"/api/categories/{c}"}));
             });
 
             return newsItems;
         }
-        public NewsItemDto GetNewsById(int id)
+        public NewsItemDetailDto GetNewsById(int id)
         {
             var newsItem = _newsItemRepository.GetNewsById(id);
+            newsItem.Links.AddReference("self", $"/api/{newsItem.Id}");
+            newsItem.Links.AddReference("edit", $"/api/{newsItem.Id}");
+            newsItem.Links.AddReference("delete", $"/api/{newsItem.Id}");
+            newsItem.Links.AddListReference("authors", _authorRepository.GetAuthorsOfNewsItem(newsItem.Id).Select(a => new { href = $"/api/authors/{a.Id}"}));
+            newsItem.Links.AddListReference("categories", _categoryRepository.getCategoriesForNewsItem(newsItem.Id).Select(c => new { href = $"/api/categories/{c}"}));
             return newsItem;
         }
 

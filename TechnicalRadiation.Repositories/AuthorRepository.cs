@@ -93,12 +93,6 @@ namespace TechnicalRadiation.Repositories
 
         public List<AuthorDetailDto> GetAuthorsOfNewsItem(int newsItemId)
         {
-            /*
-                Get NewsItemAuthors by newsItemId
-                for each NewsItemAuthor getAuthorById where authorId = NewsItemAuthor.AuthorId, add to list
-                map list from authors to authordto
-                return list 
-             */
              List<AuthorDetailDto> authors = new List<AuthorDetailDto>();
              var newsItemAuthors = DataProvider.NewsItemAuthor.Where(r => r.NewsItemId == newsItemId);
              foreach(var i in newsItemAuthors)

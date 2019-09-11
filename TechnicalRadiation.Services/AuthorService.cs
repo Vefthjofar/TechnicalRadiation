@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using TechnicalRadiation.Models.Entities;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
 using TechnicalRadiation.Models.InputModels;

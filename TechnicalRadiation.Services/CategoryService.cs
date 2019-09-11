@@ -2,29 +2,35 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using TechnicalRadiation.Models.Dto;
+using TechnicalRadiation.Models.InputModels;
 using TechnicalRadiation.Repositories;
 
 namespace TechnicalRadiation.Services
 {
     public class CategoryService
     {
-        private CategoryRepository _CategoryRepository;
+        private CategoryRepository _categoryRepository;
 
         public CategoryService(IMapper mapper)
         {
-            _CategoryRepository = new CategoryRepository(mapper);
+            _categoryRepository = new CategoryRepository(mapper);
         }
 
         public IEnumerable<CategoryDto> GetAllCategories()
         {
-            var categories = _CategoryRepository.GetAllCategories().ToList();
+            var categories = _categoryRepository.GetAllCategories().ToList();
             return categories;
         }
 
         public CategoryDto GetCategoryById(int id)
         {
-            var category = _CategoryRepository.GetCategoryById(id);
+            var category = _categoryRepository.GetCategoryById(id);
             return category;
+        }
+        
+        public CategoryDto CreateNewCategory(CategoryInputModel category)
+        {
+            return _categoryRepository.CreateNewCategory(category);
         }
         
     }

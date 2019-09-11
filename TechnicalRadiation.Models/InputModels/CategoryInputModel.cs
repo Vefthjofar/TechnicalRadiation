@@ -7,7 +7,5 @@ namespace TechnicalRadiation.Models.InputModels
         [Required]
         [MaxLength(60)]
         public string Name { get; set; }
-
-
     }
 }

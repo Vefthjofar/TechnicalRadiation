@@ -29,7 +29,7 @@ namespace TechnicalRadiation.Repositories
             return _mapper.Map<AuthorDetailDto>(entity);
         }
 
-         public IEnumerable<NewsItem> GetAllNewsItemsByAuthor(int id)
+         public IEnumerable<NewsItemDto> GetAllNewsItemsByAuthor(int id)
         {
             IEnumerable<NewsItemAuthor> items = DataProvider.NewsItemAuthor.Where(r => r.AuthorId == id);
             List<NewsItem> newsItems = new List<NewsItem>();
@@ -39,7 +39,7 @@ namespace TechnicalRadiation.Repositories
             }
             newsItems.OrderByDescending(r => r.PublishDate);
 
-            return newsItems;
+            return _mapper.Map<IEnumerable<NewsItemDto>>(newsItems);
 
         }
         

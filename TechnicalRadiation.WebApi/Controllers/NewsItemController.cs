@@ -60,6 +60,7 @@ namespace TechnicalRadiation.WebApi.Controllers
 
             return NoContent();
         }
+        
         [Route("{id:int}")]
         [HttpDelete]
         public IActionResult DeleteNewsItemById(int id)

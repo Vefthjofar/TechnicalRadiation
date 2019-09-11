@@ -50,5 +50,26 @@ namespace TechnicalRadiation.WebApi.Controllers
 
             return CreatedAtRoute("GetCategoryById", new { id = entity.Id }, null);
         }
+
+        [Route("{id:int}")]
+        [HttpPut]
+        public IActionResult UpdateCategoryById([FromBody] CategoryInputModel category, int id)
+        {
+            if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
+            if (!ModelState.IsValid) { return BadRequest("Model is not properly formatted."); }
+
+            _categoryService.UpdateCategoryById(category, id);
+
+            return NoContent();
+        }
+
+        [Route("{id:int}")]
+        [HttpDelete]
+        public IActionResult DeleteCategoryById(int id)
+        {
+            if(!_authenticationService.isValidToken(Request.Headers["Authorization"])) {return Unauthorized();}
+            _categoryService.DeleteCategoryById(id);
+            return NoContent();
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace TechnicalRadiation.Services
             var authors = _authorRepository.GetAllAuthors().ToList();
             return authors;
         }
-        public AuthorDto GetAuthorById(int id)
+        public AuthorDetailDto GetAuthorById(int id)
         {
             var author = _authorRepository.GetAuthorById(id);
             return author;

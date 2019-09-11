@@ -71,7 +71,17 @@ namespace TechnicalRadiation.Repositories
             };
             DataProvider.NewsItemCategories.Add(newsItemCategory);
             return true;
+        }
 
+        public IEnumerable<int> getCategoriesForNewsItem(int id)
+        {
+            IEnumerable<NewsItemCategories> items = DataProvider.NewsItemCategories.Where(r => r.NewsItemId == id);
+            List<int> categories = new List<int>();
+            foreach (var i in items)
+            {
+                categories.Add(i.CategoryId);
+            }
+            return categories;
         }
     }
 }

@@ -116,6 +116,22 @@ namespace TechnicalRadiation.Repositories.Data
         };
 
         public static List<NewsItemCategories> NewsItemCategories = new List<NewsItemCategories>
-        {};
+        {
+            new NewsItemCategories
+            {
+                CategoryId = 2,
+                NewsItemId = 0
+            },
+            new NewsItemCategories
+            {
+                CategoryId = 1,
+                NewsItemId = 0
+            },
+            new NewsItemCategories
+            {
+                CategoryId = 0,
+                NewsItemId = 1
+            }
+        };
     }
 }

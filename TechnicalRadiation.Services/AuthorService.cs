@@ -4,6 +4,7 @@ using AutoMapper;
 using TechnicalRadiation.Models.Entities;
 using TechnicalRadiation.Models.Dto;
 using TechnicalRadiation.Repositories;
+using TechnicalRadiation.Models.InputModels;
 
 namespace TechnicalRadiation.Services
 {
@@ -33,6 +34,26 @@ namespace TechnicalRadiation.Services
             var newsItems = _authorRepository.GetAllNewsItemsByAuthor(id);
 
             return newsItems;
+        }
+
+        public AuthorDto CreateNewAuthor(AuthorInputModel author)
+        {
+            return _authorRepository.CreateNewAuthor(author);
+        }
+
+        public void UpdateAuthorById(AuthorInputModel author, int id)
+        {
+            _authorRepository.UpdateAuthorById(author,id);
+        }
+        public void DeleteAuthorById(int id)
+        {
+            _authorRepository.DeleteAutorById(id);
+        }
+
+        public bool LinkAuthorToNewsItem(int authorId, int newsItemId)
+        {
+            var ans = _authorRepository.LinkAuthorToNewsItem(authorId, newsItemId);
+            return ans;
         }
     }
 }
